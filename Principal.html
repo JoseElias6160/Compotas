@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MERCADO VIRTUAL </title>
+    <link rel="stylesheet" href="./Styles/Estilo.css">
+    <link rel="stylesheet" href="./Styles/crudUsuario.css">
+    <title>MERCADO VIRTUAL</title>
+</header>
+
+<body>
+    <h1>MERCADO VIRTUAL</h1>
+
+
+    <section id="CONTACTANOS">
+        <div id="contenedor_api">
+
+        </div>
+
+    </section>
+
+
+
+    <section id="PRODUCTOS">
+        <div>
+            <input id="busqueda" class="busqueda" type="text" placeholder="Busqueda de productos">
+            <button id="btnBuscar">
+                BUSCAR
+                <img src="./image/buscar.png">
+            </button>
+        </div>
+
+        <div class="contenedor" id="contenedor">
+        </div>
+
+        <div class="paginacion">
+            <button id="btnAnterior"> Atras</button>
+            <button id="btnSiguiente"> Siguiente</button>
+        </div>
+
+
+    </section>
+
+
+    <script src="JS/main2.js"></script>
+    <script src="JS/crudAPI.js"></script>
+
+    <script>
+        var seccionPeliculas = document.getElementById('PRODUCTOS');
+        function mostrarPeliculas() {
+            var secciones = document.querySelectorAll('section');
+            secciones.forEach(function (seccion) {
+                seccion.style.display = 'none';
+            });
+            seccionPeliculas.style.display = 'block';
+        }
+        window.onload = mostrarPeliculas;
+    </script>
+
+</body>
+
+</html>
