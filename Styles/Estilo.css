@@ -1,236 +1,132 @@
-* {
+/* Estilos generales */
+body {
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-
-  body {
-    font-family:Roboto; 
-    color: #000000;
- 
-  }
-
-  body h1 {
-    color: #aa8c8e;
-    width: 100%;
-    height: 60px;
-    background: transparent;
-    font-family: "Calibri, "Trebuchet MS",
-      sans-serif, Arial, Helvetica, sans-serif;
-    padding-top: 20px;
-    text-align: center;
-
-  }
-
-  .contenedor {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto 100px auto;
-    display: flex;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-   
-  }
-
-  .contenedor .pelicula {
-    text-align: center;
-  }
-
-  .contenedor .pelicula .titulo {
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .contenedor .pelicula .poster {
-    width: 90%;
-    margin-bottom: 10px;
-    border-radius: 15px;
-  }
-
-  .paginacion {
-    position: fixed;
-    bottom: 0;
-    background: #c8c3d400;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px;
- 
-  }
-
-  .paginacion button {
-    cursor: pointer;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 35px;
-    width: 200px;
-    background: #570e88;
-    color: #fff;
-    border-radius: 10px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    transition: 0.3s ease all;
-  }
-
-  .paginacion button:hover {
-    background: #000000;
-  }
-
+  background-color: #f4f4f4da;
+  color: #333;
 }
 
-div {
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  margin: 20px; 
+h1 {
+  text-align: center;
+  color: #ff0000;
+  margin: 20px 0;
 }
 
+#PRODUCTOS {
+  padding: 20px;
+}
 
 .busqueda {
-  width: 30%; 
-  padding: 10px; 
-  border: 2px solid #007bff; 
-  border-radius: 5px 0 0 5px; 
-  font-size: 16px; 
-  outline: none
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-
-
-.busqueda:focus {
-  border-color: #0056b3; 
-}
-
 
 #btnBuscar {
-  padding: 10px 15px; 
-  background-color: #007bff; 
-  color: white; 
-  border: none; 
-  border-radius: 0 5px 5px 0; 
-  cursor: pointer; 
-  display: flex; 
-  align-items: center;
-  transition: background-color 0.3s; 
+  background-color: #ff0000; /* Rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-
 
 #btnBuscar:hover {
-  background-color: #0056b3; 
+  background-color: #cc0000; /* Rojo oscuro */
 }
 
-
-#btnBuscar img {
-  width: 20px; 
-  height: 20px; 
-  margin-left: 5px; 
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
-
-
-/* Estilo general de la tabla */
-table {
-  width: 100%; /* Asegura que la tabla ocupe el ancho completo */
-  border-collapse: collapse; /* Elimina el espacio entre las celdas */
-  margin-top: 20px; /* Espacio superior */
-  border-radius: 8px; /* Bordes redondeados para la tabla */
-  overflow: hidden; /* Para manejar los bordes redondeados */
+.producto {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  width: 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
 
-/* Estilo del encabezado */
-thead {
-  background-color: #6c757d; /* Color de fondo gris suave */
-  color: white; /* Color del texto en el encabezado */
+.producto:hover {
+  transform: scale(1.05);
 }
 
-thead th {
-  padding: 12px; /* Espaciado interno para las celdas del encabezado */
-  text-align: left; /* Alinear texto a la izquierda */
-  font-size: 16px; /* Tamaño de fuente */
+#contenedor_api {
+  margin-top: 20px;
 }
 
-/* Estilo para las filas del cuerpo */
-tbody tr {
-  border-bottom: 1px solid #e2e2e2; /* Línea entre las filas */
-  transition: background-color 0.3s; /* Efecto suave de fondo al hacer hover */
+.table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-tbody tr:hover {
-  background-color: #f8f9fa; /* Color de fondo suave al pasar el ratón */
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
 }
 
-tbody td {
-  padding: 15px; /* Espaciado interno para las celdas */
-  text-align: center; /* Alinear contenido al centro */
-  vertical-align: middle; /* Alinear verticalmente en el centro */
-  font-size: 14px; /* Tamaño de fuente */
+.table th {
+  background-color: #ff0000;
+  color: white;
 }
 
-/* Estilo para las imágenes de los productos */
-tbody img {
-  width: 100%; /* Hacer que las imágenes ocupen el ancho de la celda */
-  max-width: 200px; /* Limitar el ancho máximo a 200px */
-  height: auto; /* Mantener la proporción de la imagen */
-  border-radius: 5px; /* Bordes redondeados para las imágenes */
+.table img {
+  width: 200px;
+  height: 250px;
 }
 
-/* Estilo para las celdas de ID */
-.id-cell {
-  font-weight: bold; /* Negrita para el ID */
-  color: #6c757d; /* Color gris suave para el texto */
+.contenedor {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten */
+  justify-content: space-around; /* Espaciado entre tarjetas */
+  margin-top: 20px;
 }
 
-/* Estilo para las celdas de título */
-.title-cell {
-  font-size: 16px; /* Tamaño de fuente mayor para el título */
-  font-weight: bold; /* Negrita para el título */
-  color: #343a40; /* Color más oscuro para el título */
+.producto {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  width: 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
 
-/* Estilo para las celdas de precio */
-.price-cell {
-  font-size: 18px; /* Tamaño de fuente mayor para el precio */
-  color: #28a745; /* Color verde para el precio */
-  font-weight: bold; /* Negrita para el precio */
+.producto:hover {
+  transform: scale(1.05);
+  background-color: #df7b7b;
 }
 
-/* Hacer la tabla responsiva */
-@media (max-width: 768px) {
-  table {
-      display: block; /* Hacer que la tabla sea un bloque en pantallas pequeñas */
-      overflow-x: auto; /* Permitir scroll horizontal en caso de ser necesario */
-  }
-
-  thead {
-      display: none; /* Ocultar el encabezado en pantallas pequeñas */
-  }
-
-  tbody tr {
-      display: block; /* Hacer que las filas sean bloques */
-      margin-bottom: 10px; /* Espacio entre los bloques */
-      background-color: #ffffff; /* Fondo blanco para las filas en móviles */
-      border-radius: 8px; /* Bordes redondeados para las filas */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para las filas */
-  }
-
-  tbody td {
-      display: flex; /* Hacer que las celdas sean flexibles */
-      justify-content: space-between; /* Separar el contenido dentro de la celda */
-      padding: 10px;
-      border-bottom: 1px solid #ddd; /* Línea entre celdas en pantallas pequeñas */
-  }
-
-  tbody td::before {
-      content: attr(data-label); /* Añadir el nombre de la columna antes del contenido */
-      font-weight: bold;
-      width: 50%;
-      color: #6c757d; /* Color gris suave para las etiquetas */
-  }
-
-  .price-cell {
-      color: #007bff; /* Cambiar el color del precio en pantallas pequeñas */
-  }
+.producto-imagen {
+  width: 100%;
+  height: auto;
 }
 
+.producto-titulo {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.producto-precio {
+  font-size: 16px;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.producto-id {
+  font-size: 14px;
+  color: #666;
+}

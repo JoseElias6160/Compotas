@@ -1,4 +1,3 @@
-// Función para mostrar la sección correcta
 function mostrarSeccion(target) {
   const secciones = document.getElementsByTagName("section");
   for (let i = 0; i < secciones.length; i++) {
@@ -10,9 +9,6 @@ function mostrarSeccion(target) {
   }
 }
 
-let pagina = 1;
-const btnAnterior = document.getElementById("btnAnterior");
-const btnSiguiente = document.getElementById("btnSiguiente");
 const btnBuscar = document.getElementById("btnBuscar"); // Referencia al botón de búsqueda
 
 // Función para cargar productos desde la API de Mercado Libre
@@ -23,33 +19,22 @@ const CargarProductos = async () => {
     const respuesta = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${Busqueda}`);
     const datos = await respuesta.json();
 
-    let productos = `
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Imagen</th>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-          </tr>
-        </thead>
-        <tbody>`;
+    let productos = '';
 
     datos.results.forEach((producto) => {
       productos += `
-        <tr data-id="${producto.id}">
-          <td><a href="detalle_producto.html?id=${producto.id}"><img src="${producto.thumbnail}" alt="${producto.title}" style="width:200px;height:250px;"></a>
-          
-          </td>
-          <td class="id-cell">${producto.id}</td>
-          <td class="title-cell">${producto.title}</td>
-          <td class="price-cell">$${producto.price}</td>
-        </tr>`;
+        <div class="producto">
+          <a href="detalle_producto.html?id=${producto.id}">
+            <img src="${producto.thumbnail}" alt="${producto.title}" class="producto-imagen">
+            <h3 class="producto-titulo">${producto.title}</h3>
+            <p class="producto-precio">$${producto.price}</p>
+            <p class="producto-id">ID: ${producto.id}</p>
+          </a>
+        </div>`;
     });
 
-    productos += ``;
-
     document.getElementById("contenedor").innerHTML = productos;
+
 
   } catch (error) {
     console.error("Error al cargar productos:", error);
@@ -62,15 +47,3 @@ btnBuscar.addEventListener('click', () => {
   CargarProductos();
 });
 
-btnSiguiente.addEventListener("click", () => {
-  pagina += 1;
-  CargarProductos();
-});
-
-btnAnterior.addEventListener("click", () => {
-  if (pagina > 1) pagina -= 1;
-  CargarProductos();
-});
-
-// Cargar productos iniciales si es necesario
-CargarProductos();

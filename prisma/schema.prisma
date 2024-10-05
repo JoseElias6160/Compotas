@@ -13,9 +13,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id          Int    @id @default(autoincrement())
-  titulo      String
-  descripcion String
-  votacion    Int
+model Cliente {
+  id        Int     @id
+  nombre    String
+  direccion String
+  telefono  String
+  ventas    Venta[]
+}
+
+model Producto {
+  id            Int            @id @default(autoincrement())
+  nombre        String
+  precio        Float
+  stock         Int
+  detalleVentas DetalleVenta[]
+}
+
+model Venta {
+  id            Int            @id @default(autoincrement())
+  fecha         DateTime
+  total         Float
+  cliente       Cliente        @relation(fields: [idCliente], references: [id])
+  idCliente     Int
+  detalleVentas DetalleVenta[]
+}
+
+model DetalleVenta {
+  id         Int      @id @default(autoincrement())
+  cantidad   Int
+  subtotal   Float
+  venta      Venta    @relation(fields: [idVenta], references: [id])
+  idVenta    Int
+  producto   Producto @relation(fields: [idProducto], references: [id])
+  idProducto Int
+}
+
+model inventario {
+  Stock_Actual Int @id
+  Stock_Min    Int
+  Stock_Max    Int
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="Styles/Carrito.css">
+</head>
+
+<body>
+    <div id="carrito">
+        <h2>Tu carrito de compras</h2>
+        <div id="lista-productos"></div>
+
+        <div id="cupon-generado"></div>
+
+        <div class="botones">
+            <input type="text" id="input-cupon" placeholder="Ingresa tu cupón" />
+            <button id="aplicar-cupon-btn">Aplicar cupón</button>
+        </div>
+
+        <div id="mensaje-cupon" style="margin-top: 10px;"></div>
+
+        <p class="total"></p>
+
+        <div class="botones2">
+            <button id="limpiar-carrito-btn">Limpiar carrito</button>
+            <button id="Agregar">Agregar</button>
+            <button id="regresar-btn">Regresar atrás</button>
+        </div>
+        <button id="Finalizar-btn">Finalizar compra</button>
+    </div>
+
+    <script src="JS/Carrito.js"></script>
+    <script src="JS/GuardarDatos.js"></script>
+</body>
+
+</html>
