@@ -6,54 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> MERCADO VIRTUAL </title>
     <link rel="stylesheet" href="./Styles/Estilo.css">
-    <title>MERCADO VIRTUAL</title>
 </header>
 
 <body>
     <h1>MERCADO VIRTUAL</h1>
 
-
     <section id="CONTACTANOS">
         <div id="contenedor_api">
-
+            <!-- Aquí puedes agregar contenido relacionado con el contacto -->
         </div>
-
     </section>
-
-
 
     <section id="PRODUCTOS">
         <div>
-            <input id="busqueda" class="busqueda" type="text" placeholder="Busqueda de productos">
+            <input id="busqueda" class="busqueda" type="text" placeholder="Búsqueda de productos">
             <button id="btnBuscar">
                 BUSCAR
-                <img src="./image/buscar.png">
+                <img src="./image/buscar.png" alt="Buscar">
             </button>
         </div>
 
         <div class="contenedor" id="contenedor">
+            <!-- Aquí se cargarán los productos -->
         </div>
-
-
-
     </section>
 
-
+    <!-- Archivo externo con el código JavaScript -->
     <script src="JS/main2.js"></script>
     <script src="JS/crudAPI.js"></script>
-
-    <script>
-        var seccionPeliculas = document.getElementById('PRODUCTOS');
-        function mostarProductos() {
-            var secciones = document.querySelectorAll('section');
-            secciones.forEach(function (seccion) {
-                seccion.style.display = 'none';
-            });
-            seccionPeliculas.style.display = 'block';
-        }
-        window.onload = mostarProductos;
-    </script>
-
 </body>
 
 </html>

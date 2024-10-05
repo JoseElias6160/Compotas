@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.removeItem('carrito');
         localStorage.removeItem('cupon_generado'); // Limpiar cupon generado al limpiar el carrito
         localStorage.removeItem('cupon_utilizado'); // Limpiar cupón utilizado al limpiar el carrito
-        alert("Carrito limpiado");
         window.location.reload();
     });
 

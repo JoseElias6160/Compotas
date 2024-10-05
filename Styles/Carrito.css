@@ -106,8 +106,10 @@ button:hover {
   margin: 40px 0 0 41%;
   width: 160px;
   background-color: rgb(134, 121, 101);
+  text-decoration: none;
 }
 
 #Finalizar-btn:hover {
   background-color: rgb(65, 59, 50);
+  text-decoration: none;
 }
