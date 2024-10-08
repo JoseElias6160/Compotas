@@ -25,7 +25,7 @@ async function cargarDetallesProducto(productoId) {
 
             // Crear el HTML de detalles del producto
             const detallesHTML = `
-                <a href="Principal.html"><button>⬅️ Back</button></a>
+                <a href="Principal.html"><button> Atrás</button></a>
                 <h2>${producto.title}</h2>
                 <div class="contenedor">
                     <img src="${producto.pictures[0].url}" alt="${producto.title}" style="width:300px;height:300px;">

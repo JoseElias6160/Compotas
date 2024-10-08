@@ -4,36 +4,47 @@
 <header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MERCADO VIRTUAL </title>
+    <title> MERCADO VIRTUAL COLOMBIA </title>
     <link rel="stylesheet" href="./Styles/Estilo.css">
 </header>
 
 <body>
-    <h1>MERCADO VIRTUAL</h1>
+    <div id="barrainicial">
+        <h1><img src="./image/store.png" alt="store" width="60" height="60"> MERCADO VIRTUAL COLOMBIA</h1>
 
-    <section id="CONTACTANOS">
-        <div id="contenedor_api">
-            <!-- Aquí puedes agregar contenido relacionado con el contacto -->
-        </div>
-    </section>
+        <button type="button" id="btnCarrito">
+            <a href="Carrito.html"><img src="./Image/carrito.png"></a>
+        </button>
 
-    <section id="PRODUCTOS">
-        <div>
+
+        <button type="button" id="btnUsuario">
+            <a href="Login.html"><img src="./Image/usuario.png"></a>
+        </button>
+
+        <!-- Contenedor para búsqueda y botón -->
+        <div class="busqueda-contenedor">
             <input id="busqueda" class="busqueda" type="text" placeholder="Búsqueda de productos">
-            <button id="btnBuscar">
-                BUSCAR
+            <button id="btnBuscar" class="btnBuscar">
                 <img src="./image/buscar.png" alt="Buscar">
             </button>
         </div>
+    </div>
 
+    <div class="carousel">
+        <div class="slides">
+            <img src="./image/imagen1.png" alt="Imagen 1" class="active">
+            <img src="./image/imagen2.png" alt="Imagen 2">
+            <img src="./image/imagen3.png" alt="Imagen 3">
+        </div>
+    </div>
+
+    <section id="PRODUCTOS">
         <div class="contenedor" id="contenedor">
-            <!-- Aquí se cargarán los productos -->
+
         </div>
     </section>
 
-    <!-- Archivo externo con el código JavaScript -->
     <script src="JS/main2.js"></script>
-    <script src="JS/crudAPI.js"></script>
 </body>
 
 </html>

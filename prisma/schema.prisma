@@ -18,6 +18,7 @@ model Cliente {
   nombre    String
   direccion String
   telefono  String
+  password  String
   ventas    Venta[]
 }
 

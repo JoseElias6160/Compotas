@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     carrito.forEach(producto => {
         carritoHTML += `
             <li>
-                <strong>${producto.title}</strong> - $${producto.price} x ${producto.cantidad}
+                <strong>${producto.title}</strong>  $${producto.price} x ${producto.cantidad}
             </li>
         `;
         articulosDiferentes.add(producto.id);

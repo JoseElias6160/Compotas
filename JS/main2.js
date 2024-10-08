@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const seccionPeliculas = document.getElementById('PRODUCTOS');
+  const seccionProductos = document.getElementById('PRODUCTOS');
   const btnBuscar = document.getElementById("btnBuscar");
   const contenedorProductos = document.getElementById("contenedor");
+  const pais = 'MCO'
 
   function mostarProductos() {
     const secciones = document.querySelectorAll('section');
     secciones.forEach(function (seccion) {
       seccion.style.display = 'none';
     });
-    seccionPeliculas.style.display = 'block';
+    seccionProductos.style.display = 'block';
     CargarProductos(); // Llamar a la API para cargar los productos automáticamente
   }
 
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const CargarProductos = async () => {
     try {
       const Busqueda = document.getElementById('busqueda').value.trim() || 'productos'; // Valor de búsqueda predeterminado
-      const respuesta = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${Busqueda}`);
+      const respuesta = await fetch(`https://api.mercadolibre.com/sites/${pais}/search?q=${Busqueda}`);
       const datos = await respuesta.json();
 
       let productos = '';
@@ -47,3 +48,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cargar productos automáticamente al cargar la página
   mostarProductos();
 });
+
+
+currentSlide = 0;
+const slides = document.querySelectorAll('.slides img');
+const totalSlides = slides.length;
+
+function nextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % totalSlides;
+  slides[currentSlide].classList.add('active');
+}
+// Cambiar de imagen cada 3 segundos
+setInterval(nextSlide, 5000);
+
+
+
+

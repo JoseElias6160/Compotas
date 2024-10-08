@@ -1,46 +1,67 @@
 /* Styles/Login.css */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #cfcdcd;
+  background: rgb(0, 2, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 2, 36, 1) 0%,
+    rgba(9, 33, 121, 1) 53%,
+    rgba(0, 234, 255, 1) 100%
+  );
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .login-container {
-  width: 400px;
-  height: 200px;
-  margin: 200px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
+  width: 350px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 15px;
   text-align: left;
-  margin-right: 100px;
 }
 
 label {
   display: block;
-  margin: 10px 0 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -48,58 +69,42 @@ button:hover {
 }
 
 #login-message {
-  text-align: center;
   margin-top: 10px;
   color: red;
 }
 
-.circle {
-  position: relative;
-  top: -400px;
-  left: 100%;
-  transform: translateY(-90%);
-  width: 100px;
-  height: 400px;
-  background-color: red;
-  border-radius: 50px;
-  animation: slideDown 2s ease-in-out;
-  animation-fill-mode: forwards; /* add this property */
-  z-index: 1; /* bring the circle to the front */
+.login-container::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(75, 78, 126, 0.7);
+  border-radius: 50%;
+  top: -100px;
+  left: -100px;
+  z-index: -1;
+  animation: pulse 5s infinite;
 }
 
-.circle2 {
-  position: relative;
-  top: -400px;
-  left: 100%;
-  transform: translateY(-90%);
-  width: 100px;
-  height: 400px;
-  background-color: red;
-  border-radius: 50px;
-  animation: slideDown 2s ease-in-out;
-  animation-fill-mode: forwards; /* add this property */
-  z-index: 1; /* bring the circle to the front */
-}
-
-.circle3 {
-  position: relative;
-  top: -400px;
-  left: 100%;
-  transform: translateY(-90%);
-  width: 100px;
-  height: 400px;
-  background-color: red;
-  border-radius: 50px;
-  animation: slideDown 2s ease-in-out;
-  animation-fill-mode: forwards; /* add this property */
-  z-index: 1; /* bring the circle to the front */
-}
-
-@keyframes slideDown {
+@keyframes pulse {
   0% {
-    transform: translateY(-60%);
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 0.7;
   }
   100% {
-    transform: translateY(0);
+    transform: scale(1);
+    opacity: 0.7;
   }
 }

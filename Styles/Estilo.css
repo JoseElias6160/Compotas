@@ -1,132 +1,251 @@
-/* Estilos generales */
+/* General Styles */
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4da;
+  background-color: #ffffff;
   color: #333;
 }
 
 h1 {
   text-align: center;
-  color: #ff0000;
-  margin: 20px 0;
+  color: #0066cc;
 }
 
-#PRODUCTOS {
+a {
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.marquee {
+  background-color: #f8f9fa;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+/* Barra de búsqueda */
+#barrainicial {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgb(238, 255, 0) 0%,
+    rgb(224, 248, 4) 30%,
+    rgba(226, 255, 0, 1) 89%
+  );
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#barrainicial h1 {
+  color: #0070b9;
+  font-family: "Arial", sans-serif;
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#barrainicial a {
+  margin-bottom: 15px;
+}
+
+/* Contenedor de búsqueda */
+.busqueda-contenedor {
+  display: flex; /* Alineación horizontal */
+  justify-content: center; /* Centrar ambos elementos horizontalmente */
+  align-items: center; /* Alinear verticalmente */
+  margin-top: 8px;
+}
+
+/* Estilos de la barra de búsqueda */
+.busqueda {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  margin-right: 10px; /* Espacio entre campo de búsqueda y botón */
+}
+
+.busqueda:focus {
+  border-color: #0066cc;
+}
+
+.btnBuscar {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btnBuscar:hover {
+  background-color: #0f3c91;
+}
+
+.btnBuscar img {
+  width: 28px;
+  height: 28px;
+  align-items: center;
+}
+
+/* Estilos para el contenedor del carrusel */
+.carousel {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0.8; /* Transparencia para el carrusel */
+}
+
+.slides img {
+  width: 100%;
+  display: none;
+  height: 260px;
+}
+
+.slides img.active {
+  display: block;
+}
+
+/* Product Styles */
+.productos-section {
+  padding: 20px;
+  margin-top: 20px; /* Espaciado entre el carrusel y los productos */
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
   padding: 20px;
 }
 
-.busqueda {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#btnBuscar {
-  background-color: #ff0000; /* Rojo */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#btnBuscar:hover {
-  background-color: #cc0000; /* Rojo oscuro */
-}
-
-.contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
 .producto {
   background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  margin: 10px;
-  width: 30%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
-}
-
-.producto:hover {
-  transform: scale(1.05);
-}
-
-#contenedor_api {
-  margin-top: 20px;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table th,
-.table td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-.table th {
-  background-color: #ff0000;
-  color: white;
-}
-
-.table img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-align: center;
   width: 200px;
-  height: 250px;
-}
-
-.contenedor {
-  display: flex;
-  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten */
-  justify-content: space-around; /* Espaciado entre tarjetas */
-  margin-top: 20px;
-}
-
-.producto {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  margin: 10px;
-  width: 30%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
 }
 
 .producto:hover {
-  transform: scale(1.05);
-  background-color: #df7b7b;
+  transform: translateY(-20px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background-color: rgb(255, 230, 0);
+}
+
+.producto a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .producto-imagen {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.producto:hover .producto-imagen {
+  opacity: 0.9;
 }
 
 .producto-titulo {
   font-size: 18px;
+  margin: 15px 0;
+  font-weight: bold;
   color: #333;
-  margin: 10px 0;
 }
 
 .producto-precio {
-  font-size: 16px;
-  color: #ff0000;
-  font-weight: bold;
+  font-size: 20px;
+  color: #0066cc;
+  margin-bottom: 10px;
 }
 
 .producto-id {
   font-size: 14px;
-  color: #666;
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contenedor {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  #barrainicial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .busqueda,
+  .btnBuscar {
+    width: 100%;
+    max-width: 400px;
+    margin: 5px 0;
+  }
+
+  #barrainicial input,
+  #barrainicial button {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+#btnCarrito {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute; /* Para que quede en una posición fija */
+  left: 90%; /* Alineado a la izquierda */
+  top: 80px; /* Espacio desde la parte superior */
+  background-color: transparent; /* Fondo transparente */
+  text-decoration: none;
+  border: none; /* Sin bordes */
+  box-shadow: none; /* Sin sombra */
+  padding: 5px;
+}
+
+#btnCarrito img {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#btnUsuario {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute; /* Para que quede en una posición fija */
+  left: 86%; /* Alineado a la izquierda */
+  top: 80px; /* Espacio desde la parte superior */
+  background-color: transparent; /* Fondo transparente */
+  text-decoration: none;
+  border: none; /* Sin bordes */
+  box-shadow: none; /* Sin sombra */
+  padding: 5px;
+}
+
+#btnUsuario img {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
 }
