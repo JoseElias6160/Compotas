@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  background-color: #003366;
+  margin: 0;
+  padding: 20px;
+  color: #ffd700;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #00509e; /* Borde azul oscuro */
+  margin-bottom: 30px;
+}
+
+/* Estilo para las celdas de la tabla */
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Estilo para las filas pares */
+.table tr:nth-child(even) {
+  background-color: #f7dc6f; /* Fondo amarillo suave para las filas pares */
+}
+
+/* Estilo para las filas impares */
+.table tr:nth-child(odd) {
+  background-color: #fde49c; /* Fondo amarillo más claro para las filas impares */
+}
+
+/* Estilo mejorado para el encabezado de la tabla */
+.table th {
+  background: linear-gradient(90deg, #002244, #00509e);
+  color: #ffd700;
+  font-weight: bold;
+  padding: 12px 8px;
+  border-bottom: 3px solid #ffd700;
+  text-transform: uppercase;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+}
+
+/* Estilo específico para la celda que contiene el ID de la película */
+.id-cell {
+  font-weight: bold;
+  color: #003366;
+}
+
+.title-cell h2 {
+  margin: 0;
+  color: #003366; /* Texto azul oscuro */
+}
+
+.botones {
+  text-align: center;
+}
+
+.botones button {
+  background-color: #00509e; /* Fondo azul oscuro */
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffd700; /* Texto amarillo dorado */
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-bottom: 14px;
+}
+
+.botones button:hover {
+  background-color: #ffd700;
+  color: #003366;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #00509e;
+}
+
+.id-cell input,
+.title-cell input,
+.puntuacion input {
+  font-size: 16px;
+  border: 1px solid #00509e;
+  color: #003366;
+}

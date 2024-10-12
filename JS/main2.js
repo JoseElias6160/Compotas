@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
       seccion.style.display = 'none';
     });
     seccionProductos.style.display = 'block';
-    CargarProductos(); // Llamar a la API para cargar los productos automáticamente
+    CargarProductos();
   }
 
   // Función para cargar productos desde la API de Mercado Libre
   const CargarProductos = async () => {
     try {
-      const Busqueda = document.getElementById('busqueda').value.trim() || 'productos'; // Valor de búsqueda predeterminado
+      const Busqueda = document.getElementById('busqueda').value.trim() || 'zapatos'; // Valor de búsqueda predeterminado
       const respuesta = await fetch(`https://api.mercadolibre.com/sites/${pais}/search?q=${Busqueda}`);
       const datos = await respuesta.json();
 
@@ -40,12 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Asignar evento de clic para el botón de búsqueda
+
   btnBuscar.addEventListener('click', () => {
-    CargarProductos(); // Cargar productos cuando se haga clic en el botón de búsqueda
+    CargarProductos();
   });
 
-  // Cargar productos automáticamente al cargar la página
+
   mostarProductos();
 });
 
@@ -54,14 +54,21 @@ currentSlide = 0;
 const slides = document.querySelectorAll('.slides img');
 const totalSlides = slides.length;
 
-function nextSlide() {
+function SiguienteBanner() {
   slides[currentSlide].classList.remove('active');
   currentSlide = (currentSlide + 1) % totalSlides;
   slides[currentSlide].classList.add('active');
 }
-// Cambiar de imagen cada 3 segundos
-setInterval(nextSlide, 5000);
+setInterval(SiguienteBanner, 5000);
 
 
 
-
+document.getElementById("btnAdmin").addEventListener("click", function () {
+  var username = prompt("Ingrese su nombre de usuario:");
+  var password = prompt("Ingrese su contraseña:");
+  if (username === "admin" && password === "1234") {
+    window.location.href = "Administracion.html";
+  } else {
+    alert("Credenciales incorrectas. Acceso denegado.");
+  }
+})

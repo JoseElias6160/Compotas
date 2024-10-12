@@ -14,39 +14,25 @@ datasource db {
 }
 
 model Cliente {
-  id        Int     @id
+  id        Int    @id
   nombre    String
   direccion String
-  telefono  String
+  telefono  Int
   password  String
-  ventas    Venta[]
 }
 
 model Producto {
-  id            Int            @id @default(autoincrement())
-  nombre        String
-  precio        Float
-  stock         Int
-  detalleVentas DetalleVenta[]
+  id     Int    @id @default(autoincrement())
+  nombre String
+  precio Float
+  stock  Int
 }
 
 model Venta {
-  id            Int            @id @default(autoincrement())
-  fecha         DateTime
-  total         Float
-  cliente       Cliente        @relation(fields: [idCliente], references: [id])
-  idCliente     Int
-  detalleVentas DetalleVenta[]
-}
-
-model DetalleVenta {
-  id         Int      @id @default(autoincrement())
-  cantidad   Int
-  subtotal   Float
-  venta      Venta    @relation(fields: [idVenta], references: [id])
-  idVenta    Int
-  producto   Producto @relation(fields: [idProducto], references: [id])
-  idProducto Int
+  id        Int      @id @default(autoincrement())
+  fecha     DateTime
+  total     Float
+  idCliente Int
 }
 
 model inventario {

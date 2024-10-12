@@ -23,21 +23,24 @@ async function cargarDetallesProducto(productoId) {
             });
             caracteristicasHTML += '</ul>';
 
-            // Crear el HTML de detalles del producto
             const detallesHTML = `
-                <a href="Principal.html"><button> Atrás</button></a>
+            <div id="detalles-producto">
+            <div class="contenedor">
+            <a href="Principal.html"><button id="atras-btn">Atrás</button></a>
+            <img src="${producto.pictures[0].url}" alt="${producto.title}">
+            <div id="producto-detalles">
                 <h2>${producto.title}</h2>
-                <div class="contenedor">
-                    <img src="${producto.pictures[0].url}" alt="${producto.title}" style="width:300px;height:300px;">
-                </div>
-                <p>${producto.short_description ? producto.short_description : "Descripción no disponible"}</p>
-                <p>Precio: $${producto.price}</p>
-                <p>Condición: ${producto.condition === 'new' ? 'Nuevo' : 'Usado'}</p>
-                <p>Disponible: ${producto.available_quantity} unidades</p>
+                <p>$COP${producto.price}</p>
                 ${caracteristicasHTML}
-                <button id="comprar-btn">🛒 Añadir al carrito</button>
-                <button id="ver-carrito-btn">🛍️ Ver carrito</button> 
-            `;
+                <div class="botones-contenedor">
+                    <button id="comprar-btn">🛒 Añadir al carrito</button>
+                    <button id="ver-carrito-btn">🛍️ Ver carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+
 
             document.getElementById("detalles-producto").innerHTML = detallesHTML;
 

@@ -35,6 +35,10 @@ li {
   border-bottom: 1px solid #ddd;
 }
 
+a {
+  text-decoration: none;
+}
+
 li:last-child {
   border-bottom: none; /* Eliminar borde del último elemento */
 }

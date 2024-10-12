@@ -249,3 +249,24 @@ a {
   background-color: transparent;
   cursor: pointer;
 }
+
+#btnAdmin {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute; /* Para que quede en una posición fija */
+  left: 94%; /* Alineado a la izquierda */
+  top: 100px; /* Espacio desde la parte superior */
+  background-color: transparent; /* Fondo transparente */
+  text-decoration: none;
+  border: none; /* Sin bordes */
+  box-shadow: none; /* Sin sombra */
+  padding: 5px;
+}
+
+#btnAdmin img {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
