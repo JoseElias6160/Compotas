@@ -7,6 +7,7 @@ const { id } = require('inversify');
 const prisma = new PrismaClient();
 const app = express();
 
+
 app.use(cors({ origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE'], allowedHeaders: ['Content-Type', 'Authorization'] }));
 app.use(express.json());
 
@@ -15,7 +16,6 @@ async function agregarProducto(nombre, precio, stock) {
   const respuesta = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=zapatos`);
   const datos = await respuesta.json();
   for (const Data of datos.results) {
-
     const idNumerico = Data.id.replace(/\D/g, '');
 
     const nuevoProducto = await prisma.producto.create({
@@ -29,8 +29,6 @@ async function agregarProducto(nombre, precio, stock) {
   }
 }
 agregarProducto();
-
-
 
 // ------------------------- CRUD para Productos -------------------------
 
